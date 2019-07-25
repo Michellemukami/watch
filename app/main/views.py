@@ -1,9 +1,10 @@
 from flask import render_template,request,redirect,url_for
-from main import main
-from .request import get_movies,get_movie,search_movie
-from .models import review
+from . import main
+from ..request import get_movies,get_movie,search_movie
 from .forms import ReviewForm
+from ..models import Review
 
+# Review = review.Review
 @main.route('/movie/review/new/<int:id>', methods = ['GET','POST'])
 def new_review(id):
     form = ReviewForm()
